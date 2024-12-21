@@ -33,7 +33,7 @@ audio_language = "Traditional Chinese"
 translate_id = {}
 
 lan_dic = {"日文": "Japanese", "英文": "English", "繁體中文": "Traditional Chinese", "韓文": "Korean", 
-"法文":"French", "泰文": "Thai", "義大利文": "Italian", "西班牙文": "Spanish", "荷蘭文":"Dutch", "德文": "German"}
+"法文":"French", "泰文": "Thai", "義大利文": "Italian", "西班牙文": "Spanish", "荷蘭文":"Dutch", "德文": "German", "越文": "Vietnamese"}
 reverse_lan_dict = {value: key for key, value in lan_dic.items()}
 
 def openai_whisper(audio_path):
@@ -86,6 +86,7 @@ def handle_text_message(event):
                         QuickReplyButton(action=MessageAction(label="西班牙文", text="設定辨識翻譯 " + "西班牙文")),
                         QuickReplyButton(action=MessageAction(label="荷蘭文", text="設定辨識翻譯 " + "荷蘭文")),
                         QuickReplyButton(action=MessageAction(label="德文", text="設定辨識翻譯 " +"德文")),
+                        QuickReplyButton(action=MessageAction(label="越文", text="設定辨識翻譯 " +"越文")),
                         ]))
         line_bot_api.reply_message(
             event.reply_token,
@@ -105,6 +106,7 @@ def handle_text_message(event):
                         QuickReplyButton(action=MessageAction(label="西班牙文", text="設定打字翻譯 " + "西班牙文")),
                         QuickReplyButton(action=MessageAction(label="荷蘭文", text="設定打字翻譯 " + "荷蘭文")),
                         QuickReplyButton(action=MessageAction(label="德文", text="設定打字翻譯 " +"德文")),
+                        QuickReplyButton(action=MessageAction(label="越文", text="設定打字翻譯 " +"越文")),
                         ]))
         line_bot_api.reply_message(
             event.reply_token,
